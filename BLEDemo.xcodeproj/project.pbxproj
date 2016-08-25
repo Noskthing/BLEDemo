@@ -8,14 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		6D7F25BA1D6F0B7600828630 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F25B91D6F0B7600828630 /* main.m */; };
-		6D7F25BD1D6F0B7600828630 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F25BC1D6F0B7600828630 /* AppDelegate.m */; };
-		6D7F25C01D6F0B7600828630 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F25BF1D6F0B7600828630 /* ViewController.m */; };
 		6D7F25C31D6F0B7600828630 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D7F25C11D6F0B7600828630 /* Main.storyboard */; };
 		6D7F25C61D6F0B7600828630 /* BLEDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F25C41D6F0B7600828630 /* BLEDemo.xcdatamodeld */; };
 		6D7F25C81D6F0B7600828630 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D7F25C71D6F0B7600828630 /* Assets.xcassets */; };
 		6D7F25CB1D6F0B7600828630 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D7F25C91D6F0B7600828630 /* LaunchScreen.storyboard */; };
 		6D7F25D61D6F0B7600828630 /* BLEDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F25D51D6F0B7600828630 /* BLEDemoTests.m */; };
 		6D7F25E11D6F0B7600828630 /* BLEDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F25E01D6F0B7600828630 /* BLEDemoUITests.m */; };
+		6D7F25F21D6F0BA000828630 /* CBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F25F01D6F0BA000828630 /* CBManager.m */; };
+		6D7F25F51D6F0BAB00828630 /* CBPeripheralExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F25F41D6F0BAB00828630 /* CBPeripheralExt.m */; };
+		6D7F25FA1D6F0BBE00828630 /* CharacteristicFormatPList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D7F25F61D6F0BBE00828630 /* CharacteristicFormatPList.plist */; };
+		6D7F25FB1D6F0BBE00828630 /* CharacteristicUUIDPList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D7F25F71D6F0BBE00828630 /* CharacteristicUUIDPList.plist */; };
+		6D7F25FC1D6F0BBE00828630 /* ServiceAndCharacteristicNames.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D7F25F81D6F0BBE00828630 /* ServiceAndCharacteristicNames.plist */; };
+		6D7F25FD1D6F0BBE00828630 /* ServiceUUIDPList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D7F25F91D6F0BBE00828630 /* ServiceUUIDPList.plist */; };
+		6D7F26001D6F0BD400828630 /* ResourceHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F25FF1D6F0BD400828630 /* ResourceHandler.m */; };
+		6D7F26051D6F0BFD00828630 /* CBCharacteristic+GetPropertyList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F26021D6F0BFD00828630 /* CBCharacteristic+GetPropertyList.m */; };
+		6D7F26061D6F0BFD00828630 /* CBService+GetPropertyString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F26041D6F0BFD00828630 /* CBService+GetPropertyString.m */; };
+		6D7F26091D6F0C1500828630 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F26081D6F0C1500828630 /* AppDelegate.m */; };
+		6D7F26101D6F0C3900828630 /* CharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F260B1D6F0C3900828630 /* CharacterViewController.m */; };
+		6D7F26111D6F0C3900828630 /* ServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F260D1D6F0C3900828630 /* ServiceController.m */; };
+		6D7F26121D6F0C3900828630 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F260F1D6F0C3900828630 /* ViewController.m */; };
+		6D7F26181D6F0CBD00828630 /* PhripheralTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F26161D6F0CBD00828630 /* PhripheralTableViewCell.m */; };
+		6D7F26191D6F0CBD00828630 /* PhripheralTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D7F26171D6F0CBD00828630 /* PhripheralTableViewCell.xib */; };
+		6D7F261D1D6F103500828630 /* CharactesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F261B1D6F103500828630 /* CharactesTableViewCell.m */; };
+		6D7F261E1D6F103500828630 /* CharactesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D7F261C1D6F103500828630 /* CharactesTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,10 +53,6 @@
 /* Begin PBXFileReference section */
 		6D7F25B51D6F0B7600828630 /* BLEDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLEDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D7F25B91D6F0B7600828630 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6D7F25BB1D6F0B7600828630 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		6D7F25BC1D6F0B7600828630 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6D7F25BE1D6F0B7600828630 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6D7F25BF1D6F0B7600828630 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6D7F25C21D6F0B7600828630 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6D7F25C51D6F0B7600828630 /* BLEDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BLEDemo.xcdatamodel; sourceTree = "<group>"; };
 		6D7F25C71D6F0B7600828630 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +64,35 @@
 		6D7F25DC1D6F0B7600828630 /* BLEDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLEDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D7F25E01D6F0B7600828630 /* BLEDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BLEDemoUITests.m; sourceTree = "<group>"; };
 		6D7F25E21D6F0B7600828630 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D7F25EF1D6F0BA000828630 /* CBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBManager.h; sourceTree = "<group>"; };
+		6D7F25F01D6F0BA000828630 /* CBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBManager.m; sourceTree = "<group>"; };
+		6D7F25F11D6F0BA000828630 /* CBManagerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBManagerHeader.h; sourceTree = "<group>"; };
+		6D7F25F31D6F0BAB00828630 /* CBPeripheralExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPeripheralExt.h; sourceTree = "<group>"; };
+		6D7F25F41D6F0BAB00828630 /* CBPeripheralExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPeripheralExt.m; sourceTree = "<group>"; };
+		6D7F25F61D6F0BBE00828630 /* CharacteristicFormatPList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CharacteristicFormatPList.plist; sourceTree = "<group>"; };
+		6D7F25F71D6F0BBE00828630 /* CharacteristicUUIDPList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CharacteristicUUIDPList.plist; sourceTree = "<group>"; };
+		6D7F25F81D6F0BBE00828630 /* ServiceAndCharacteristicNames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ServiceAndCharacteristicNames.plist; sourceTree = "<group>"; };
+		6D7F25F91D6F0BBE00828630 /* ServiceUUIDPList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ServiceUUIDPList.plist; sourceTree = "<group>"; };
+		6D7F25FE1D6F0BD400828630 /* ResourceHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceHandler.h; sourceTree = "<group>"; };
+		6D7F25FF1D6F0BD400828630 /* ResourceHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceHandler.m; sourceTree = "<group>"; };
+		6D7F26011D6F0BFD00828630 /* CBCharacteristic+GetPropertyList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBCharacteristic+GetPropertyList.h"; sourceTree = "<group>"; };
+		6D7F26021D6F0BFD00828630 /* CBCharacteristic+GetPropertyList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBCharacteristic+GetPropertyList.m"; sourceTree = "<group>"; };
+		6D7F26031D6F0BFD00828630 /* CBService+GetPropertyString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBService+GetPropertyString.h"; sourceTree = "<group>"; };
+		6D7F26041D6F0BFD00828630 /* CBService+GetPropertyString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBService+GetPropertyString.m"; sourceTree = "<group>"; };
+		6D7F26071D6F0C1500828630 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6D7F26081D6F0C1500828630 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6D7F260A1D6F0C3900828630 /* CharacterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterViewController.h; sourceTree = "<group>"; };
+		6D7F260B1D6F0C3900828630 /* CharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterViewController.m; sourceTree = "<group>"; };
+		6D7F260C1D6F0C3900828630 /* ServiceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceController.h; sourceTree = "<group>"; };
+		6D7F260D1D6F0C3900828630 /* ServiceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceController.m; sourceTree = "<group>"; };
+		6D7F260E1D6F0C3900828630 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6D7F260F1D6F0C3900828630 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6D7F26151D6F0CBD00828630 /* PhripheralTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhripheralTableViewCell.h; sourceTree = "<group>"; };
+		6D7F26161D6F0CBD00828630 /* PhripheralTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhripheralTableViewCell.m; sourceTree = "<group>"; };
+		6D7F26171D6F0CBD00828630 /* PhripheralTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhripheralTableViewCell.xib; sourceTree = "<group>"; };
+		6D7F261A1D6F103500828630 /* CharactesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharactesTableViewCell.h; sourceTree = "<group>"; };
+		6D7F261B1D6F103500828630 /* CharactesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharactesTableViewCell.m; sourceTree = "<group>"; };
+		6D7F261C1D6F103500828630 /* CharactesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharactesTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +143,11 @@
 		6D7F25B71D6F0B7600828630 /* BLEDemo */ = {
 			isa = PBXGroup;
 			children = (
-				6D7F25BB1D6F0B7600828630 /* AppDelegate.h */,
-				6D7F25BC1D6F0B7600828630 /* AppDelegate.m */,
-				6D7F25BE1D6F0B7600828630 /* ViewController.h */,
-				6D7F25BF1D6F0B7600828630 /* ViewController.m */,
+				6D7F26141D6F0C9800828630 /* View */,
+				6D7F26131D6F0C8B00828630 /* Controller */,
+				6D7F25EE1D6F0B8D00828630 /* CBManager */,
+				6D7F26071D6F0C1500828630 /* AppDelegate.h */,
+				6D7F26081D6F0C1500828630 /* AppDelegate.m */,
 				6D7F25C11D6F0B7600828630 /* Main.storyboard */,
 				6D7F25C71D6F0B7600828630 /* Assets.xcassets */,
 				6D7F25C91D6F0B7600828630 /* LaunchScreen.storyboard */,
@@ -141,6 +182,54 @@
 				6D7F25E21D6F0B7600828630 /* Info.plist */,
 			);
 			path = BLEDemoUITests;
+			sourceTree = "<group>";
+		};
+		6D7F25EE1D6F0B8D00828630 /* CBManager */ = {
+			isa = PBXGroup;
+			children = (
+				6D7F25F11D6F0BA000828630 /* CBManagerHeader.h */,
+				6D7F25EF1D6F0BA000828630 /* CBManager.h */,
+				6D7F25F01D6F0BA000828630 /* CBManager.m */,
+				6D7F25F31D6F0BAB00828630 /* CBPeripheralExt.h */,
+				6D7F25F41D6F0BAB00828630 /* CBPeripheralExt.m */,
+				6D7F26011D6F0BFD00828630 /* CBCharacteristic+GetPropertyList.h */,
+				6D7F26021D6F0BFD00828630 /* CBCharacteristic+GetPropertyList.m */,
+				6D7F26031D6F0BFD00828630 /* CBService+GetPropertyString.h */,
+				6D7F26041D6F0BFD00828630 /* CBService+GetPropertyString.m */,
+				6D7F25FE1D6F0BD400828630 /* ResourceHandler.h */,
+				6D7F25FF1D6F0BD400828630 /* ResourceHandler.m */,
+				6D7F25F61D6F0BBE00828630 /* CharacteristicFormatPList.plist */,
+				6D7F25F71D6F0BBE00828630 /* CharacteristicUUIDPList.plist */,
+				6D7F25F81D6F0BBE00828630 /* ServiceAndCharacteristicNames.plist */,
+				6D7F25F91D6F0BBE00828630 /* ServiceUUIDPList.plist */,
+			);
+			name = CBManager;
+			sourceTree = "<group>";
+		};
+		6D7F26131D6F0C8B00828630 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6D7F260A1D6F0C3900828630 /* CharacterViewController.h */,
+				6D7F260B1D6F0C3900828630 /* CharacterViewController.m */,
+				6D7F260C1D6F0C3900828630 /* ServiceController.h */,
+				6D7F260D1D6F0C3900828630 /* ServiceController.m */,
+				6D7F260E1D6F0C3900828630 /* ViewController.h */,
+				6D7F260F1D6F0C3900828630 /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		6D7F26141D6F0C9800828630 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6D7F26151D6F0CBD00828630 /* PhripheralTableViewCell.h */,
+				6D7F26161D6F0CBD00828630 /* PhripheralTableViewCell.m */,
+				6D7F26171D6F0CBD00828630 /* PhripheralTableViewCell.xib */,
+				6D7F261A1D6F103500828630 /* CharactesTableViewCell.h */,
+				6D7F261B1D6F103500828630 /* CharactesTableViewCell.m */,
+				6D7F261C1D6F103500828630 /* CharactesTableViewCell.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,9 +335,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D7F25FC1D6F0BBE00828630 /* ServiceAndCharacteristicNames.plist in Resources */,
 				6D7F25CB1D6F0B7600828630 /* LaunchScreen.storyboard in Resources */,
 				6D7F25C81D6F0B7600828630 /* Assets.xcassets in Resources */,
+				6D7F25FB1D6F0BBE00828630 /* CharacteristicUUIDPList.plist in Resources */,
+				6D7F25FD1D6F0BBE00828630 /* ServiceUUIDPList.plist in Resources */,
 				6D7F25C31D6F0B7600828630 /* Main.storyboard in Resources */,
+				6D7F26191D6F0CBD00828630 /* PhripheralTableViewCell.xib in Resources */,
+				6D7F25FA1D6F0BBE00828630 /* CharacteristicFormatPList.plist in Resources */,
+				6D7F261E1D6F103500828630 /* CharactesTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +369,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D7F25C61D6F0B7600828630 /* BLEDemo.xcdatamodeld in Sources */,
-				6D7F25C01D6F0B7600828630 /* ViewController.m in Sources */,
-				6D7F25BD1D6F0B7600828630 /* AppDelegate.m in Sources */,
+				6D7F26061D6F0BFD00828630 /* CBService+GetPropertyString.m in Sources */,
+				6D7F26001D6F0BD400828630 /* ResourceHandler.m in Sources */,
+				6D7F26051D6F0BFD00828630 /* CBCharacteristic+GetPropertyList.m in Sources */,
+				6D7F26091D6F0C1500828630 /* AppDelegate.m in Sources */,
+				6D7F26121D6F0C3900828630 /* ViewController.m in Sources */,
+				6D7F25F51D6F0BAB00828630 /* CBPeripheralExt.m in Sources */,
+				6D7F25F21D6F0BA000828630 /* CBManager.m in Sources */,
+				6D7F26111D6F0C3900828630 /* ServiceController.m in Sources */,
+				6D7F26101D6F0C3900828630 /* CharacterViewController.m in Sources */,
+				6D7F26181D6F0CBD00828630 /* PhripheralTableViewCell.m in Sources */,
+				6D7F261D1D6F103500828630 /* CharactesTableViewCell.m in Sources */,
 				6D7F25BA1D6F0B7600828630 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
