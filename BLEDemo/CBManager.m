@@ -15,6 +15,10 @@
     NSMutableArray * _peripheralListArray;
 }
 
+@property (nonatomic,copy)ConnectPeripheralCompletionBlock connectPeripheralCompletionBlock;
+
+@property (nonatomic,copy) DiscoverServiceCharactersCompletionBlock discoverServiceCharactersCompletionBlock;
+
 @property (nonatomic,strong)CBCentralManager * centralManager;
 
 @end
@@ -81,7 +85,7 @@
     [_characteristics removeAllObjects];
 }
 
-#pragma mark    -manager delegate
+#pragma mark    -central delegate
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central
 {
     switch ((NSInteger)[_centralManager state])
@@ -191,6 +195,11 @@
     
     [self redirectToRootviewcontroller];
     [self refreshPeripherals];
+    
+    if (_discoveryDlegate)
+    {
+        [_discoveryDlegate disconnectPeripheral];
+    }
 }
 
 #pragma mark    -peripheral delegate
@@ -270,7 +279,13 @@
     
 }
 
-
+- (void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(nullable NSError *)error
+{
+    if ([_currentPeripheralDelegate respondsToSelector:@selector(peripheral:didUpdateNotificationStateForCharacteristic:error:)])
+    {
+        [_currentPeripheralDelegate peripheral:peripheral didUpdateNotificationStateForCharacteristic:characteristic error:error];
+    }
+}
 #pragma mark    -connect method
 -(void)connectPeripheral:(CBPeripheral *)peripheral CompletionBlock:(ConnectPeripheralCompletionBlock)completionHandler
 {
@@ -293,6 +308,17 @@
     }
 }
 
+-(void)disconnectPeripheral
+{
+    if (_currentConnectPeripheral)
+    {
+        [_centralManager cancelPeripheralConnection:_currentConnectPeripheral];
+        _currentConnectPeripheral = nil;
+    }
+    //central delegate will clearDevices when u disconnect peripheral
+    //    [self clearDevices];
+}
+
 -(void)connectService:(CBService *)service CompletionBlock:(DiscoverServiceCharactersCompletionBlock)block
 {
     _currentService = service;
@@ -306,18 +332,10 @@
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(timeOutMethodForConnect) object:nil];
 }
 
-- (void) disconnectPeripheral:(CBPeripheral*)peripheral
-{
-    if(peripheral)
-    {
-        [_centralManager cancelPeripheralConnection:peripheral];
-    }
-}
-
 -(void)timeOutMethodForConnect
 {
     NSLog(@"time out");
-    [self disconnectPeripheral:_currentConnectPeripheral];
+    [self disconnectPeripheral];
     NSMutableDictionary *errorDetail = [NSMutableDictionary dictionary];
     [errorDetail setValue:@"connectionTimeOutAlert" forKey:NSLocalizedDescriptionKey];
     NSError *error = [NSError errorWithDomain:@"domain" code:100 userInfo:errorDetail];

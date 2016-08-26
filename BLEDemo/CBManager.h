@@ -20,6 +20,11 @@
  */
 - (void)discoveryNewPeripheral;
 
+/**
+ *  this method is invoked when  u disconnect peripheral success
+ */
+- (void)disconnectPeripheral;
+
 @optional
 
 /**
@@ -156,22 +161,32 @@ typedef void(^DiscoverServiceCharactersCompletionBlock)(BOOL result,NSError * er
 
 @property (nonatomic,retain) id <CBManagerCurrentPeripheralDelegte> currentPeripheralDelegate;
 
-@property (nonatomic,copy)ConnectPeripheralCompletionBlock connectPeripheralCompletionBlock;
-
-@property (nonatomic,copy) DiscoverServiceCharactersCompletionBlock discoverServiceCharactersCompletionBlock;
-
 + (instancetype)sharedManager;
 
 - (void)startScan;
 
 - (void)stopScan;
 
+/**
+ *  claer current found peripheral and start scan again
+ */
 - (void)refreshPeripherals;
 
+/**
+ *  Method about connect peripheral.
+ *
+ *  @param peripheral  peripheral which u want to connect
+ *  @param completionHandler invoked when u connect peripheral success
+ */
 - (void)connectPeripheral:(CBPeripheral*)peripheral CompletionBlock:(ConnectPeripheralCompletionBlock)completionHandler;
+
+/**
+ *  u can disconnect currentConnectPeripheral
+ */
+- (void)disconnectPeripheral;
+
 
 - (void)connectService:(CBService *)service CompletionBlock:(DiscoverServiceCharactersCompletionBlock)block;
 
-- (void)disconnectPeripheral:(CBPeripheral*)peripheral;
 
 @end

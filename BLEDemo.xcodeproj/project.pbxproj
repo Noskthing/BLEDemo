@@ -31,6 +31,8 @@
 		6D7F26191D6F0CBD00828630 /* PhripheralTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D7F26171D6F0CBD00828630 /* PhripheralTableViewCell.xib */; };
 		6D7F261D1D6F103500828630 /* CharactesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F261B1D6F103500828630 /* CharactesTableViewCell.m */; };
 		6D7F261E1D6F103500828630 /* CharactesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D7F261C1D6F103500828630 /* CharactesTableViewCell.xib */; };
+		6D7F26221D6FD6D600828630 /* UpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F26211D6FD6D600828630 /* UpdateViewController.m */; };
+		6D7F26251D6FE52F00828630 /* NSData+CharacterEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F26241D6FE52F00828630 /* NSData+CharacterEncoding.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,10 @@
 		6D7F261A1D6F103500828630 /* CharactesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharactesTableViewCell.h; sourceTree = "<group>"; };
 		6D7F261B1D6F103500828630 /* CharactesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharactesTableViewCell.m; sourceTree = "<group>"; };
 		6D7F261C1D6F103500828630 /* CharactesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharactesTableViewCell.xib; sourceTree = "<group>"; };
+		6D7F26201D6FD6D600828630 /* UpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateViewController.h; sourceTree = "<group>"; };
+		6D7F26211D6FD6D600828630 /* UpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateViewController.m; sourceTree = "<group>"; };
+		6D7F26231D6FE52F00828630 /* NSData+CharacterEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CharacterEncoding.h"; sourceTree = "<group>"; };
+		6D7F26241D6FE52F00828630 /* NSData+CharacterEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CharacterEncoding.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +215,8 @@
 		6D7F26131D6F0C8B00828630 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6D7F26201D6FD6D600828630 /* UpdateViewController.h */,
+				6D7F26211D6FD6D600828630 /* UpdateViewController.m */,
 				6D7F260A1D6F0C3900828630 /* CharacterViewController.h */,
 				6D7F260B1D6F0C3900828630 /* CharacterViewController.m */,
 				6D7F260C1D6F0C3900828630 /* ServiceController.h */,
@@ -222,6 +230,8 @@
 		6D7F26141D6F0C9800828630 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6D7F26231D6FE52F00828630 /* NSData+CharacterEncoding.h */,
+				6D7F26241D6FE52F00828630 /* NSData+CharacterEncoding.m */,
 				6D7F26151D6F0CBD00828630 /* PhripheralTableViewCell.h */,
 				6D7F26161D6F0CBD00828630 /* PhripheralTableViewCell.m */,
 				6D7F26171D6F0CBD00828630 /* PhripheralTableViewCell.xib */,
@@ -371,6 +381,7 @@
 				6D7F25C61D6F0B7600828630 /* BLEDemo.xcdatamodeld in Sources */,
 				6D7F26061D6F0BFD00828630 /* CBService+GetPropertyString.m in Sources */,
 				6D7F26001D6F0BD400828630 /* ResourceHandler.m in Sources */,
+				6D7F26221D6FD6D600828630 /* UpdateViewController.m in Sources */,
 				6D7F26051D6F0BFD00828630 /* CBCharacteristic+GetPropertyList.m in Sources */,
 				6D7F26091D6F0C1500828630 /* AppDelegate.m in Sources */,
 				6D7F26121D6F0C3900828630 /* ViewController.m in Sources */,
@@ -381,6 +392,7 @@
 				6D7F26181D6F0CBD00828630 /* PhripheralTableViewCell.m in Sources */,
 				6D7F261D1D6F103500828630 /* CharactesTableViewCell.m in Sources */,
 				6D7F25BA1D6F0B7600828630 /* main.m in Sources */,
+				6D7F26251D6FE52F00828630 /* NSData+CharacterEncoding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +618,7 @@
 				6D7F25E71D6F0B7600828630 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6D7F25E81D6F0B7600828630 /* Build configuration list for PBXNativeTarget "BLEDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -614,6 +627,7 @@
 				6D7F25EA1D6F0B7600828630 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6D7F25EB1D6F0B7600828630 /* Build configuration list for PBXNativeTarget "BLEDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -622,6 +636,7 @@
 				6D7F25ED1D6F0B7600828630 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

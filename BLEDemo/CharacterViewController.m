@@ -9,6 +9,7 @@
 #import "CharacterViewController.h"
 #import "CBManagerHeader.h"
 #import "CharactesTableViewCell.h"
+#import "UpdateViewController.h"
 
 @interface CharacterViewController ()<UITableViewDelegate,UITableViewDataSource,CBManagerCurrentPeripheralDelegte>
 {
@@ -56,6 +57,9 @@
     CBCharacteristic * model = CBManagerGet.characteristics[indexPath.row];
     
     CBManagerGet.currentCharacteristic = model;
+    
+    UpdateViewController * vc = [[UpdateViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
     
     [CBManagerGet.currentConnectPeripheral discoverDescriptorsForCharacteristic:CBManagerGet.currentCharacteristic];
 }

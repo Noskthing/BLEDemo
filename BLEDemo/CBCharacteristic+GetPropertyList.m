@@ -12,10 +12,6 @@
 
 /* characteristic properties*/
 
-#define READ        @"Read"
-#define WRITE       @"Write"
-#define NOTIFY      @"Notify"
-#define INDICATE    @"Indicate"
 
 -(NSString *)getPropertyString
 {

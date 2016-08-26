@@ -19,6 +19,11 @@
 
 @implementation ViewController
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [CBManagerGet disconnectPeripheral];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -76,6 +81,11 @@
 
 #pragma mark    discover delegate
 - (void)discoveryNewPeripheral
+{
+    [_tableView reloadData];
+}
+
+- (void)disconnectPeripheral
 {
     [_tableView reloadData];
 }
