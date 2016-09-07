@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D2A0F801D7FACC80020E61E /* CBPeripheral+WriteValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A0F7F1D7FACC80020E61E /* CBPeripheral+WriteValue.m */; };
 		6D7F25BA1D6F0B7600828630 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F25B91D6F0B7600828630 /* main.m */; };
 		6D7F25C31D6F0B7600828630 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D7F25C11D6F0B7600828630 /* Main.storyboard */; };
 		6D7F25C61D6F0B7600828630 /* BLEDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F25C41D6F0B7600828630 /* BLEDemo.xcdatamodeld */; };
@@ -53,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6D2A0F7E1D7FACC80020E61E /* CBPeripheral+WriteValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBPeripheral+WriteValue.h"; sourceTree = "<group>"; };
+		6D2A0F7F1D7FACC80020E61E /* CBPeripheral+WriteValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBPeripheral+WriteValue.m"; sourceTree = "<group>"; };
 		6D7F25B51D6F0B7600828630 /* BLEDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLEDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D7F25B91D6F0B7600828630 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6D7F25C21D6F0B7600828630 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -198,6 +201,8 @@
 				6D7F25F01D6F0BA000828630 /* CBManager.m */,
 				6D7F25F31D6F0BAB00828630 /* CBPeripheralExt.h */,
 				6D7F25F41D6F0BAB00828630 /* CBPeripheralExt.m */,
+				6D2A0F7E1D7FACC80020E61E /* CBPeripheral+WriteValue.h */,
+				6D2A0F7F1D7FACC80020E61E /* CBPeripheral+WriteValue.m */,
 				6D7F26011D6F0BFD00828630 /* CBCharacteristic+GetPropertyList.h */,
 				6D7F26021D6F0BFD00828630 /* CBCharacteristic+GetPropertyList.m */,
 				6D7F26031D6F0BFD00828630 /* CBService+GetPropertyString.h */,
@@ -386,6 +391,7 @@
 				6D7F26091D6F0C1500828630 /* AppDelegate.m in Sources */,
 				6D7F26121D6F0C3900828630 /* ViewController.m in Sources */,
 				6D7F25F51D6F0BAB00828630 /* CBPeripheralExt.m in Sources */,
+				6D2A0F801D7FACC80020E61E /* CBPeripheral+WriteValue.m in Sources */,
 				6D7F25F21D6F0BA000828630 /* CBManager.m in Sources */,
 				6D7F26111D6F0C3900828630 /* ServiceController.m in Sources */,
 				6D7F26101D6F0C3900828630 /* CharacterViewController.m in Sources */,
