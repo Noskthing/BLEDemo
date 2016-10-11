@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *serviceCount;
 @property (weak, nonatomic) IBOutlet UILabel *RSSI;
+@property (weak, nonatomic) IBOutlet UILabel *UUIDString;
 
 @end

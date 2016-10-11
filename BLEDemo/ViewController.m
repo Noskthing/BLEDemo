@@ -14,6 +14,8 @@
 @interface ViewController ()<CBManagerDiscoveryDelegate,UITableViewDelegate,UITableViewDataSource>
 {
     UITableView * _tableView;
+    
+    NSInteger currentIndex;
 }
 @end
 
@@ -21,7 +23,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    [CBManagerGet disconnectPeripheral];
+    [self disconnectPeripheral];
 }
 
 - (void)viewDidLoad {
@@ -29,15 +31,15 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.title = @"搜索设备";
     
-    [CBManagerGet startScan];
-    CBManagerGet.discoveryDlegate = self;
+    [LBWCBManagerGet startScan];
+    LBWCBManagerGet.discoveryDlegate = self;
     
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:_tableView];
     
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.rowHeight = 80;
+    _tableView.rowHeight = 120;
     [_tableView registerNib:[UINib nibWithNibName:@"PhripheralTableViewCell" bundle:nil] forCellReuseIdentifier:@"service"];
     
 }
@@ -50,27 +52,34 @@
 #pragma mark     tableView delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return CBManagerGet.foundPeripherals.count;
+    return 1;
 }
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return LBWCBManagerGet.foundPeripherals.count;
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     PhripheralTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"service" forIndexPath:indexPath];
     
-    CBPeripheralExt * model = CBManagerGet.foundPeripherals[indexPath.row];
+    CBPeripheralExt * model = LBWCBManagerGet.foundPeripherals[indexPath.row];
     
     cell.name.text = [model getPeripheralName];
-    cell.serviceCount.text = [model getServiceCount];
-    cell.RSSI.text = [model getRSSI];
+    cell.serviceCount.text = [NSString stringWithFormat:@"Service : %@",[model getServiceCount]];
+    cell.RSSI.text = [NSString stringWithFormat:@"RSSI : %@",[model getRSSI]];
+    cell.UUIDString.text = [model getUUIDString];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CBPeripheralExt * model = CBManagerGet.foundPeripherals[indexPath.row];
+    CBPeripheralExt * model = LBWCBManagerGet.foundPeripherals[indexPath.section];
     
-    [CBManagerGet connectPeripheral:model.mPeripheral CompletionBlock:^(BOOL result, NSError *error) {
+    [LBWCBManagerGet connectPeripheral:model.mPeripheral CompletionBlock:^(BOOL result, NSError *error) {
         if (result)
         {
             ServiceController * nextVC = [[ServiceController alloc] init];

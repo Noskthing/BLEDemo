@@ -6,29 +6,25 @@
 //  Copyright © 2016年 李博文. All rights reserved.
 //
 
-#import "CBManager.h"
+#import "LBWBlueToothManager.h"
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "ResourceHandler.h"
 
-@interface CBManager() <CBCentralManagerDelegate, CBPeripheralDelegate>
+@interface LBWBlueToothManager() <CBCentralManagerDelegate, CBPeripheralDelegate>
 {
     NSMutableArray * _peripheralListArray;
 }
-
-@property (nonatomic,copy)ConnectPeripheralCompletionBlock connectPeripheralCompletionBlock;
-
-@property (nonatomic,copy) DiscoverServiceCharactersCompletionBlock discoverServiceCharactersCompletionBlock;
 
 @property (nonatomic,strong)CBCentralManager * centralManager;
 
 @end
 
-@implementation CBManager
+@implementation LBWBlueToothManager
 
 
 + (id)sharedManager
 {
-    static CBManager *sharedMyManager = nil;
+    static LBWBlueToothManager *sharedMyManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedMyManager = [[self alloc] init];
@@ -85,7 +81,7 @@
     [_characteristics removeAllObjects];
 }
 
-#pragma mark    -central delegate
+#pragma mark    -manager delegate
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central
 {
     switch ((NSInteger)[_centralManager state])
@@ -143,6 +139,7 @@
         newPeriPheral.mPeripheral = [peripheral copy];
         newPeriPheral.mAdvertisementData = [advertisementData copy];
         newPeriPheral.mRSSI = [RSSI copy];
+        newPeriPheral.mAdvertisementData = [advertisementData copy];
         [_peripheralListArray addObject:peripheral];
         [_foundPeripherals addObject:newPeriPheral];
         [_discoveryDlegate discoveryNewPeripheral];
@@ -178,7 +175,7 @@
     }
     else
     {
-//        isTimeOutAlert = NO;
+        // isTimeOutAlert = NO;
         
         // Checking whether the disconnected device has pending firmware upgrade
         if (error != nil)
@@ -195,11 +192,6 @@
     
     [self redirectToRootviewcontroller];
     [self refreshPeripherals];
-    
-    if (_discoveryDlegate)
-    {
-        [_discoveryDlegate disconnectPeripheral];
-    }
 }
 
 #pragma mark    -peripheral delegate
@@ -276,16 +268,9 @@
     {
         [_currentPeripheralDelegate peripheral:peripheral didUpdateValueForDescriptor:descriptor error:error];
     }
-    
 }
 
-- (void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(nullable NSError *)error
-{
-    if ([_currentPeripheralDelegate respondsToSelector:@selector(peripheral:didUpdateNotificationStateForCharacteristic:error:)])
-    {
-        [_currentPeripheralDelegate peripheral:peripheral didUpdateNotificationStateForCharacteristic:characteristic error:error];
-    }
-}
+
 #pragma mark    -connect method
 -(void)connectPeripheral:(CBPeripheral *)peripheral CompletionBlock:(ConnectPeripheralCompletionBlock)completionHandler
 {
@@ -308,17 +293,6 @@
     }
 }
 
--(void)disconnectPeripheral
-{
-    if (_currentConnectPeripheral)
-    {
-        [_centralManager cancelPeripheralConnection:_currentConnectPeripheral];
-        _currentConnectPeripheral = nil;
-    }
-    //central delegate will clearDevices when u disconnect peripheral
-    //    [self clearDevices];
-}
-
 -(void)connectService:(CBService *)service CompletionBlock:(DiscoverServiceCharactersCompletionBlock)block
 {
     _currentService = service;
@@ -332,10 +306,18 @@
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(timeOutMethodForConnect) object:nil];
 }
 
+- (void) disconnectPeripheral:(CBPeripheral*)peripheral
+{
+    if(peripheral)
+    {
+        [_centralManager cancelPeripheralConnection:peripheral];
+    }
+}
+
 -(void)timeOutMethodForConnect
 {
     NSLog(@"time out");
-    [self disconnectPeripheral];
+    [self disconnectPeripheral:_currentConnectPeripheral];
     NSMutableDictionary *errorDetail = [NSMutableDictionary dictionary];
     [errorDetail setValue:@"connectionTimeOutAlert" forKey:NSLocalizedDescriptionKey];
     NSError *error = [NSError errorWithDomain:@"domain" code:100 userInfo:errorDetail];
@@ -347,8 +329,8 @@
 {
     //清空已存设备并重新开始搜索服务
     [self clearDevices];
-    [[CBManager sharedManager] stopScan];
-    [[CBManager sharedManager] startScan];
+    [[LBWBlueToothManager sharedManager] stopScan];
+    [[LBWBlueToothManager sharedManager] startScan];
 }
 
 -(void)redirectToRootviewcontroller

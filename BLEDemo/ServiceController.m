@@ -9,6 +9,7 @@
 #import "ServiceController.h"
 #import "CBManagerHeader.h"
 #import "CharacterViewController.h"
+#import "ServiceTableViewCell.h"
 
 @interface ServiceController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -28,33 +29,34 @@
     
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.rowHeight = 60;
-    [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"service"];
+    _tableView.rowHeight = 80;
+    [_tableView registerNib:[UINib nibWithNibName:@"ServiceTableViewCell" bundle:nil] forCellReuseIdentifier:@"service"];
 }
 
 
 #pragma mark     tableView delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return CBManagerGet.services.count;
+    return LBWCBManagerGet.services.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"service" forIndexPath:indexPath];
+    ServiceTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"service" forIndexPath:indexPath];
     
-    CBService * model = CBManagerGet.services[indexPath.row];
+    CBService * model = LBWCBManagerGet.services[indexPath.row];
     
-    cell.textLabel.text = [model getServiceNameForUUID];
-
+    cell.serviceName.text = [model getServiceNameForUUID];
+    cell.UUIDString.text = [NSString stringWithFormat:@"UUID : %@",model.UUID.UUIDString];
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CBService * model = CBManagerGet.services[indexPath.row];
+    CBService * model = LBWCBManagerGet.services[indexPath.row];
     
-    [CBManagerGet connectService:model CompletionBlock:^(BOOL result, NSError *error) {
+    [LBWCBManagerGet connectService:model CompletionBlock:^(BOOL result, NSError *error) {
         if (result)
         {
             CharacterViewController * vc = [[CharacterViewController alloc] init];

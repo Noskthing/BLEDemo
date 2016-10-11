@@ -30,7 +30,7 @@
  *
  */
 #import <Foundation/Foundation.h>
-#import "CBManager.h"
+#import "LBWBlueToothManager.h"
 
 @interface ResourceHandler : NSObject
 

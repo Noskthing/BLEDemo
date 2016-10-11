@@ -27,7 +27,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"读写操作";
     
-    CBManagerGet.currentPeripheralDelegate = self;
+    LBWCBManagerGet.currentPeripheralDelegate = self;
     
     [self createUI];
     
@@ -50,7 +50,7 @@
     _textView.layer.borderWidth = 0.5;
     [self.view addSubview:_textView];
     
-    _array = [CBManagerGet.currentCharacteristic getPropertyList];
+    _array = [LBWCBManagerGet.currentCharacteristic getPropertyList];
     CGFloat width = self.view.frame.size.width/_array.count;
     
     for (int i = 0; i < _array.count; i++)
@@ -79,28 +79,28 @@
     
     if ([str isEqualToString:READ])
     {
-        [CBManagerGet.currentConnectPeripheral readValueForCharacteristic:CBManagerGet.currentCharacteristic];
+        [LBWCBManagerGet.currentConnectPeripheral readValueForCharacteristic:LBWCBManagerGet.currentCharacteristic];
     }
     else if([str isEqualToString:WRITE])
     {
         NSMutableData * data = [NSData dataFromHexString:_textView.text];
-        if ((CBManagerGet.currentCharacteristic.properties & CBCharacteristicPropertyWriteWithoutResponse) != 0)
+        if ((LBWCBManagerGet.currentCharacteristic.properties & CBCharacteristicPropertyWriteWithoutResponse) != 0)
         {
-            [CBManagerGet.currentConnectPeripheral writeValue:data forCharacteristic:CBManagerGet.currentCharacteristic type:CBCharacteristicWriteWithoutResponse];
+            [LBWCBManagerGet.currentConnectPeripheral writeValue:data forCharacteristic:LBWCBManagerGet.currentCharacteristic type:CBCharacteristicWriteWithoutResponse];
         }
         else
         {
-            [CBManagerGet.currentConnectPeripheral writeValue:data forCharacteristic:CBManagerGet.currentCharacteristic type:CBCharacteristicWriteWithResponse];
+            [LBWCBManagerGet.currentConnectPeripheral writeValue:data forCharacteristic:LBWCBManagerGet.currentCharacteristic type:CBCharacteristicWriteWithResponse];
         }
     }
     else if ([str isEqualToString:NOTIFY])
     {
-        [CBManagerGet.currentConnectPeripheral setNotifyValue:!btn.selected forCharacteristic:CBManagerGet.currentCharacteristic];
+        [LBWCBManagerGet.currentConnectPeripheral setNotifyValue:!btn.selected forCharacteristic:LBWCBManagerGet.currentCharacteristic];
         btn.selected = !btn.selected;
     }
     else
     {
-        [CBManagerGet.currentConnectPeripheral setNotifyValue:!btn.selected forCharacteristic:CBManagerGet.currentCharacteristic];
+        [LBWCBManagerGet.currentConnectPeripheral setNotifyValue:!btn.selected forCharacteristic:LBWCBManagerGet.currentCharacteristic];
         btn.selected = !btn.selected;
     }
 }
@@ -118,7 +118,7 @@
 
 - (void)peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
-    [CBManagerGet.currentConnectPeripheral readValueForCharacteristic:CBManagerGet.currentCharacteristic];
+    [LBWCBManagerGet.currentConnectPeripheral readValueForCharacteristic:LBWCBManagerGet.currentCharacteristic];
 }
 
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
