@@ -129,17 +129,24 @@
 {
     if (![_peripheralListArray containsObject:peripheral])
     {
-        //连接态
-        if (peripheral.state == CBPeripheralStateConnected)
-        {
-            return;
-        }
+//        //连接态
+//        if (peripheral.state == CBPeripheralStateConnected)
+//        {
+//            return;
+//        }
+        NSLog(@"%@",peripheral.identifier.UUIDString);
+        [_peripheralListArray enumerateObjectsUsingBlock:^(CBPeripheral *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (![obj.identifier.UUIDString isEqualToString:peripheral.identifier.UUIDString])
+            {
+                return ;
+            }
+        }];
         
         CBPeripheralExt *newPeriPheral = [[CBPeripheralExt alloc] init];
         newPeriPheral.mPeripheral = [peripheral copy];
         newPeriPheral.mAdvertisementData = [advertisementData copy];
         newPeriPheral.mRSSI = [RSSI copy];
-        newPeriPheral.mAdvertisementData = [advertisementData copy];
+        
         [_peripheralListArray addObject:peripheral];
         [_foundPeripherals addObject:newPeriPheral];
         [_discoveryDlegate discoveryNewPeripheral];

@@ -65,7 +65,7 @@
 {
     PhripheralTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"service" forIndexPath:indexPath];
     
-    CBPeripheralExt * model = LBWCBManagerGet.foundPeripherals[indexPath.row];
+    CBPeripheralExt * model = LBWCBManagerGet.foundPeripherals[indexPath.section];
     
     cell.name.text = [model getPeripheralName];
     cell.serviceCount.text = [NSString stringWithFormat:@"Service : %@",[model getServiceCount]];
@@ -91,6 +91,7 @@
 #pragma mark    discover delegate
 - (void)discoveryNewPeripheral
 {
+    NSLog(@"aaa");
     [_tableView reloadData];
 }
 
