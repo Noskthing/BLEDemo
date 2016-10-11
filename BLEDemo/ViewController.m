@@ -15,7 +15,7 @@
 {
     UITableView * _tableView;
     
-    NSInteger currentIndex;
+    NSInteger _currentIndex;
 }
 @end
 
@@ -33,6 +33,8 @@
     
     [LBWCBManagerGet startScan];
     LBWCBManagerGet.discoveryDlegate = self;
+    
+    _currentIndex = -1;
     
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:_tableView];
@@ -52,7 +54,8 @@
 #pragma mark     tableView delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    CBPeripheralExt * model = LBWCBManagerGet.foundPeripherals[section];
+    return model.isShowAdvertisementData?model.mAdvertisementData.allKeys.count:1;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -72,6 +75,10 @@
     cell.RSSI.text = [NSString stringWithFormat:@"RSSI : %@",[model getRSSI]];
     cell.UUIDString.text = [model getUUIDString];
     
+    [cell.pullDownButton addTarget:self action:@selector(pullDownButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
+    cell.pullDownButton.tag = indexPath.section + 10;
+    cell.pullDownButton.selected = model.isShowAdvertisementData;
+    
     return cell;
 }
 
@@ -86,6 +93,27 @@
             [self.navigationController pushViewController:nextVC animated:YES];
         }
     }];
+}
+
+#pragma mark    pullDownButton Touch
+-(void)pullDownButtonTouched:(UIButton *)btn
+{
+    if (_currentIndex > 0)
+    {
+        CBPeripheralExt * previousModel = LBWCBManagerGet.foundPeripherals[_currentIndex];
+        previousModel.isShowAdvertisementData = NO;
+    }
+    
+    CBPeripheralExt * currentModel = LBWCBManagerGet.foundPeripherals[btn.tag - 10];
+    currentModel.isShowAdvertisementData = YES;
+    
+    NSMutableIndexSet *idxSet = [[NSMutableIndexSet alloc] init];
+    [idxSet addIndex:_currentIndex];
+    [idxSet addIndex:btn.tag - 10];
+    
+    [_tableView reloadData];
+//    [_tableView reloadSections:idxSet withRowAnimation:UITableViewRowAnimationFade];
+    
 }
 
 #pragma mark    discover delegate

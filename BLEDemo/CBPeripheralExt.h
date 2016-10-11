@@ -21,6 +21,8 @@
 @property (nonatomic, retain)NSNumber           *mRSSI;
 
 
+@property (nonatomic, assign)BOOL isShowAdvertisementData;
+
 - (NSString *)getPeripheralName;
 
 - (NSString *)getRSSI;

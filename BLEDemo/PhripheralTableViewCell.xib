@@ -36,13 +36,29 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUN-dy-XQg">
+                        <color key="backgroundColor" red="0.84396435312813312" green="0.84396435312813312" blue="0.84396435312813312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="nWk-9A-oHM"/>
+                            <constraint firstAttribute="height" constant="40" id="rG4-jX-sNa"/>
+                        </constraints>
+                        <state key="normal" image="pullDown"/>
+                        <state key="selected" image="pullUp"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="tUN-dy-XQg" secondAttribute="trailing" constant="9" id="3eK-vT-UfV"/>
                     <constraint firstItem="xrV-bd-d9i" firstAttribute="top" secondItem="97e-gX-4h9" secondAttribute="bottom" constant="8" id="Aid-JF-ZpC"/>
                     <constraint firstItem="97e-gX-4h9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="6" id="R1O-aD-HOL"/>
                     <constraint firstItem="97e-gX-4h9" firstAttribute="top" secondItem="3y4-6W-ahq" secondAttribute="bottom" constant="3" id="ZBP-hz-PnY"/>
                     <constraint firstItem="3y4-6W-ahq" firstAttribute="top" secondItem="Rn9-8a-RLm" secondAttribute="bottom" constant="6" id="ZOU-SN-n3a"/>
                     <constraint firstItem="3y4-6W-ahq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="6" id="a8S-pp-XKc"/>
+                    <constraint firstItem="tUN-dy-XQg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="22" id="ky4-YO-gCo"/>
                     <constraint firstItem="Rn9-8a-RLm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="mHu-gn-LgX"/>
                     <constraint firstItem="Rn9-8a-RLm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="6" id="sWL-b0-PQt"/>
                     <constraint firstItem="xrV-bd-d9i" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="6" id="w0t-3v-LVA"/>
@@ -52,9 +68,14 @@
                 <outlet property="RSSI" destination="3y4-6W-ahq" id="ibG-Fo-Jh8"/>
                 <outlet property="UUIDString" destination="xrV-bd-d9i" id="ZvM-X4-KZh"/>
                 <outlet property="name" destination="Rn9-8a-RLm" id="9X5-SW-dUS"/>
+                <outlet property="pullDownButton" destination="tUN-dy-XQg" id="JHD-9D-oF4"/>
                 <outlet property="serviceCount" destination="97e-gX-4h9" id="VE1-uA-NT9"/>
             </connections>
             <point key="canvasLocation" x="8" y="-6.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="pullDown" width="30" height="30"/>
+        <image name="pullUp" width="30" height="30"/>
+    </resources>
 </document>

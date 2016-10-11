@@ -14,6 +14,14 @@
 
 @implementation CBPeripheralExt
 
+-(instancetype)init
+{
+    if (self = [super init])
+    {
+        self.isShowAdvertisementData = NO;
+    }
+    return self;
+}
 -(void)setMPeripheral:(CBPeripheral *)mPeripheral
 {
     _mPeripheral = mPeripheral;
