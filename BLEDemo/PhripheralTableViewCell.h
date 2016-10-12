@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *UUIDString;
 
 @property (weak, nonatomic) IBOutlet UIButton *pullDownButton;
+@property (weak, nonatomic) IBOutlet UILabel *state;
 
 @end

@@ -92,7 +92,11 @@
             /* Tell user to power ON BT for functionality, but not on first run - the Framework will alert in that instance. */
             //Show Alert
 //            [self redirectToRootviewcontroller];
-            [_discoveryDlegate bluetoothStateUpdateToState:NO];
+            if ([_discoveryDlegate respondsToSelector:@selector(bluetoothStateUpdateToState:)])
+            {
+                [_discoveryDlegate bluetoothStateUpdateToState:NO];
+            }
+            
             break;
         }
             
@@ -146,6 +150,7 @@
         newPeriPheral.mPeripheral = [peripheral copy];
         newPeriPheral.mAdvertisementData = [advertisementData copy];
         newPeriPheral.mRSSI = [RSSI copy];
+        newPeriPheral.state = peripheral.state;
         
         [_peripheralListArray addObject:peripheral];
         [_foundPeripherals addObject:newPeriPheral];

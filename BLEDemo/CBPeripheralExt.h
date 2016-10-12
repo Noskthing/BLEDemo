@@ -23,6 +23,10 @@
 
 @property (nonatomic, assign)BOOL isShowAdvertisementData;
 
+
+@property (nonatomic, assign) CBPeripheralState state;
+
+
 - (NSString *)getPeripheralName;
 
 - (NSString *)getRSSI;

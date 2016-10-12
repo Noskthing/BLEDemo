@@ -35,6 +35,7 @@
 		6D7F26251D6FE52F00828630 /* NSData+CharacterEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F26241D6FE52F00828630 /* NSData+CharacterEncoding.m */; };
 		6DB09D4B1DADD9150027A1B9 /* DataShowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB09D491DADD9150027A1B9 /* DataShowTableViewCell.m */; };
 		6DB09D4C1DADD9150027A1B9 /* DataShowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB09D4A1DADD9150027A1B9 /* DataShowTableViewCell.xib */; };
+		6DB09D4F1DAE04070027A1B9 /* NSArray+judge.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB09D4E1DAE04070027A1B9 /* NSArray+judge.m */; };
 		6DBEFA361DAC917E003C2B76 /* LBWBlueToothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFA351DAC917E003C2B76 /* LBWBlueToothManager.m */; };
 		6DBEFA3A1DACAE1D003C2B76 /* ServiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFA381DACAE1D003C2B76 /* ServiceTableViewCell.m */; };
 		6DBEFA3B1DACAE1D003C2B76 /* ServiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DBEFA391DACAE1D003C2B76 /* ServiceTableViewCell.xib */; };
@@ -107,6 +108,8 @@
 		6DB09D481DADD9150027A1B9 /* DataShowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataShowTableViewCell.h; sourceTree = "<group>"; };
 		6DB09D491DADD9150027A1B9 /* DataShowTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataShowTableViewCell.m; sourceTree = "<group>"; };
 		6DB09D4A1DADD9150027A1B9 /* DataShowTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataShowTableViewCell.xib; sourceTree = "<group>"; };
+		6DB09D4D1DAE04070027A1B9 /* NSArray+judge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+judge.h"; sourceTree = "<group>"; };
+		6DB09D4E1DAE04070027A1B9 /* NSArray+judge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+judge.m"; sourceTree = "<group>"; };
 		6DBEFA341DAC915F003C2B76 /* LBWBlueToothManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LBWBlueToothManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		6DBEFA351DAC917E003C2B76 /* LBWBlueToothManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBWBlueToothManager.m; sourceTree = "<group>"; };
 		6DBEFA371DACAE1D003C2B76 /* ServiceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceTableViewCell.h; sourceTree = "<group>"; };
@@ -162,6 +165,7 @@
 		6D7F25B71D6F0B7600828630 /* BLEDemo */ = {
 			isa = PBXGroup;
 			children = (
+				6DB09D501DAE040A0027A1B9 /* Tools */,
 				6D7F26141D6F0C9800828630 /* View */,
 				6D7F26131D6F0C8B00828630 /* Controller */,
 				6D7F25EE1D6F0B8D00828630 /* CBManager */,
@@ -261,6 +265,15 @@
 				6DB09D4A1DADD9150027A1B9 /* DataShowTableViewCell.xib */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		6DB09D501DAE040A0027A1B9 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				6DB09D4D1DAE04070027A1B9 /* NSArray+judge.h */,
+				6DB09D4E1DAE04070027A1B9 /* NSArray+judge.m */,
+			);
+			name = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,6 +424,7 @@
 				6D7F26091D6F0C1500828630 /* AppDelegate.m in Sources */,
 				6DBEFA3A1DACAE1D003C2B76 /* ServiceTableViewCell.m in Sources */,
 				6DBEFA361DAC917E003C2B76 /* LBWBlueToothManager.m in Sources */,
+				6DB09D4F1DAE04070027A1B9 /* NSArray+judge.m in Sources */,
 				6D7F26121D6F0C3900828630 /* ViewController.m in Sources */,
 				6D7F25F51D6F0BAB00828630 /* CBPeripheralExt.m in Sources */,
 				6D2A0F801D7FACC80020E61E /* CBPeripheral+WriteValue.m in Sources */,

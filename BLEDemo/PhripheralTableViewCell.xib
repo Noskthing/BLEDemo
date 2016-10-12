@@ -50,14 +50,21 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Connect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tf5-O7-XLZ">
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="tUN-dy-XQg" secondAttribute="trailing" constant="9" id="3eK-vT-UfV"/>
                     <constraint firstItem="xrV-bd-d9i" firstAttribute="top" secondItem="97e-gX-4h9" secondAttribute="bottom" constant="8" id="Aid-JF-ZpC"/>
                     <constraint firstItem="97e-gX-4h9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="6" id="R1O-aD-HOL"/>
+                    <constraint firstItem="tf5-O7-XLZ" firstAttribute="bottom" secondItem="Rn9-8a-RLm" secondAttribute="bottom" id="Xsk-pJ-Nud"/>
                     <constraint firstItem="97e-gX-4h9" firstAttribute="top" secondItem="3y4-6W-ahq" secondAttribute="bottom" constant="3" id="ZBP-hz-PnY"/>
                     <constraint firstItem="3y4-6W-ahq" firstAttribute="top" secondItem="Rn9-8a-RLm" secondAttribute="bottom" constant="6" id="ZOU-SN-n3a"/>
                     <constraint firstItem="3y4-6W-ahq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="6" id="a8S-pp-XKc"/>
+                    <constraint firstItem="tf5-O7-XLZ" firstAttribute="leading" secondItem="Rn9-8a-RLm" secondAttribute="trailing" constant="10" id="eMq-9p-gRl"/>
                     <constraint firstItem="tUN-dy-XQg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="22" id="ky4-YO-gCo"/>
                     <constraint firstItem="Rn9-8a-RLm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="mHu-gn-LgX"/>
                     <constraint firstItem="Rn9-8a-RLm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="6" id="sWL-b0-PQt"/>
@@ -70,6 +77,7 @@
                 <outlet property="name" destination="Rn9-8a-RLm" id="9X5-SW-dUS"/>
                 <outlet property="pullDownButton" destination="tUN-dy-XQg" id="JHD-9D-oF4"/>
                 <outlet property="serviceCount" destination="97e-gX-4h9" id="VE1-uA-NT9"/>
+                <outlet property="state" destination="tf5-O7-XLZ" id="QBx-VL-UV4"/>
             </connections>
             <point key="canvasLocation" x="8" y="-6.5"/>
         </tableViewCell>

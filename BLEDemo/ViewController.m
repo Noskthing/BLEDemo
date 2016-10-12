@@ -29,6 +29,7 @@
 {
     [LBWCBManagerGet disconnectPeripheral:LBWCBManagerGet.currentConnectPeripheral];
     [LBWCBManagerGet refreshPeripherals];
+    [_tableView reloadData];
 }
 
 - (void)viewDidLoad {
@@ -42,6 +43,7 @@
     _currentIndex = -1;
     
     [self createUI];
+
 }
 
 -(void)createUI
@@ -101,6 +103,8 @@
         cell.serviceCount.text = [NSString stringWithFormat:@"Service : %@",[model getServiceCount]];
         cell.RSSI.text = [NSString stringWithFormat:@"RSSI : %@",[model getRSSI]];
         cell.UUIDString.text = [model getUUIDString];
+        cell.state.text = model.state == CBPeripheralStateConnected?@"Connected":@"NO Connect";
+        cell.state.textColor = model.state == CBPeripheralStateConnected?[UIColor redColor]:[UIColor greenColor];
         
         [cell.pullDownButton addTarget:self action:@selector(pullDownButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
         cell.pullDownButton.tag = indexPath.section + 10;
@@ -146,9 +150,9 @@
         __strong __typeof(weakSelf)strongSelf = weakSelf;
         [strongSelf.view addSubview:strongSelf.mask];
         [LBWCBManagerGet connectPeripheral:model.mPeripheral CompletionBlock:^(BOOL result, NSError *error) {
+            [strongSelf.mask removeFromSuperview];
             if (result)
             {
-                [strongSelf.mask removeFromSuperview];
                 ServiceController * nextVC = [[ServiceController alloc] init];
                 [self.navigationController pushViewController:nextVC animated:YES];
             }
@@ -195,7 +199,7 @@
 #pragma mark    discover delegate
 - (void)discoveryNewPeripheral
 {
-    NSLog(@"aaa");
+//    NSLog(@"aaa");
     [_tableView reloadData];
 }
 
