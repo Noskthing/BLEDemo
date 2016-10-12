@@ -44,7 +44,7 @@
     _label.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:_label];
 
-    _textView = [[UITextView alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(_label.frame), self.view.frame.size.width - 40, 80)];
+    _textView = [[UITextView alloc] initWithFrame:CGRectMake(20, CGRectGetMaxY(_label.frame) + 30, self.view.frame.size.width - 40, 80)];
     _textView.layer.cornerRadius = 5;
     _textView.layer.borderColor = [UIColor grayColor].CGColor;
     _textView.layer.borderWidth = 0.5;

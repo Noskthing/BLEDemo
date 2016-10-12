@@ -33,6 +33,8 @@
 		6D7F261E1D6F103500828630 /* CharactesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D7F261C1D6F103500828630 /* CharactesTableViewCell.xib */; };
 		6D7F26221D6FD6D600828630 /* UpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F26211D6FD6D600828630 /* UpdateViewController.m */; };
 		6D7F26251D6FE52F00828630 /* NSData+CharacterEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7F26241D6FE52F00828630 /* NSData+CharacterEncoding.m */; };
+		6DB09D4B1DADD9150027A1B9 /* DataShowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB09D491DADD9150027A1B9 /* DataShowTableViewCell.m */; };
+		6DB09D4C1DADD9150027A1B9 /* DataShowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB09D4A1DADD9150027A1B9 /* DataShowTableViewCell.xib */; };
 		6DBEFA361DAC917E003C2B76 /* LBWBlueToothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFA351DAC917E003C2B76 /* LBWBlueToothManager.m */; };
 		6DBEFA3A1DACAE1D003C2B76 /* ServiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFA381DACAE1D003C2B76 /* ServiceTableViewCell.m */; };
 		6DBEFA3B1DACAE1D003C2B76 /* ServiceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DBEFA391DACAE1D003C2B76 /* ServiceTableViewCell.xib */; };
@@ -102,6 +104,9 @@
 		6D7F26211D6FD6D600828630 /* UpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UpdateViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		6D7F26231D6FE52F00828630 /* NSData+CharacterEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CharacterEncoding.h"; sourceTree = "<group>"; };
 		6D7F26241D6FE52F00828630 /* NSData+CharacterEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CharacterEncoding.m"; sourceTree = "<group>"; };
+		6DB09D481DADD9150027A1B9 /* DataShowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataShowTableViewCell.h; sourceTree = "<group>"; };
+		6DB09D491DADD9150027A1B9 /* DataShowTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataShowTableViewCell.m; sourceTree = "<group>"; };
+		6DB09D4A1DADD9150027A1B9 /* DataShowTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataShowTableViewCell.xib; sourceTree = "<group>"; };
 		6DBEFA341DAC915F003C2B76 /* LBWBlueToothManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LBWBlueToothManager.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		6DBEFA351DAC917E003C2B76 /* LBWBlueToothManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBWBlueToothManager.m; sourceTree = "<group>"; };
 		6DBEFA371DACAE1D003C2B76 /* ServiceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceTableViewCell.h; sourceTree = "<group>"; };
@@ -251,6 +256,9 @@
 				6DBEFA371DACAE1D003C2B76 /* ServiceTableViewCell.h */,
 				6DBEFA381DACAE1D003C2B76 /* ServiceTableViewCell.m */,
 				6DBEFA391DACAE1D003C2B76 /* ServiceTableViewCell.xib */,
+				6DB09D481DADD9150027A1B9 /* DataShowTableViewCell.h */,
+				6DB09D491DADD9150027A1B9 /* DataShowTableViewCell.m */,
+				6DB09D4A1DADD9150027A1B9 /* DataShowTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -360,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D7F25FC1D6F0BBE00828630 /* ServiceAndCharacteristicNames.plist in Resources */,
+				6DB09D4C1DADD9150027A1B9 /* DataShowTableViewCell.xib in Resources */,
 				6D7F25CB1D6F0B7600828630 /* LaunchScreen.storyboard in Resources */,
 				6D7F25C81D6F0B7600828630 /* Assets.xcassets in Resources */,
 				6D7F25FB1D6F0BBE00828630 /* CharacteristicUUIDPList.plist in Resources */,
@@ -395,6 +404,7 @@
 			files = (
 				6D7F25C61D6F0B7600828630 /* BLEDemo.xcdatamodeld in Sources */,
 				6D7F26061D6F0BFD00828630 /* CBService+GetPropertyString.m in Sources */,
+				6DB09D4B1DADD9150027A1B9 /* DataShowTableViewCell.m in Sources */,
 				6D7F26001D6F0BD400828630 /* ResourceHandler.m in Sources */,
 				6D7F26221D6FD6D600828630 /* UpdateViewController.m in Sources */,
 				6D7F26051D6F0BFD00828630 /* CBCharacteristic+GetPropertyList.m in Sources */,
